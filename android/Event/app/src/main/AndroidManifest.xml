@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.example.event">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@drawable/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@drawable/logo"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Event"
+        android:usesCleartextTraffic="true"
+        tools:targetApi="31">
+        <activity
+            android:name=".certificate"
+            android:exported="false" />
+        <activity
+            android:name=".Advertisement"
+            android:exported="false" />
+        <activity
+            android:name=".Foodanddecourate"
+            android:exported="false" />
+        <activity
+            android:name=".Addevent"
+            android:exported="false" />
+        <activity
+            android:name=".AndroidBarcodeQrExample"
+            android:exported="false" />
+        <activity
+            android:name=".View_my_qr"
+            android:exported="false" />
+        <activity
+            android:name=".Staffviewuser"
+            android:exported="false" />
+        <activity
+            android:name=".userViewbookings"
+            android:exported="false" />
+        <activity
+            android:name=".staffViewbookings"
+            android:exported="false" />
+        <activity
+            android:name=".Viewservice"
+            android:exported="false" />
+        <activity
+            android:name=".staffviewevent"
+            android:exported="false" />
+        <activity
+            android:name=".Viewevent"
+            android:exported="false" />
+        <activity
+            android:name=".Updateprofile"
+            android:exported="false" />
+        <activity
+            android:name=".Stafffhome"
+            android:exported="false" />
+        <activity
+            android:name=".Userhome"
+            android:exported="false" />
+        <activity
+            android:name=".Userregistration"
+            android:exported="false" />
+        <activity
+            android:name=".Login"
+            android:exported="false" />
+        <activity
+            android:name=".Ipsettings"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false" />
+    </application>
+
+</manifest>

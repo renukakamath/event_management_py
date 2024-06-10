@@ -1,0 +1,77 @@
+{%include 'admin_header.html'%}
+
+
+<div style="margin-bottom: 1em; margin-top: 3em; background:url('/static/img/carousel-1.jpg') ; height: 300px; width: 100%; background-size: cover;" >
+	</div>
+<center>
+	<form method="post" style="margin-top: 2rem;">
+		{% if data['updater'] %}
+		<h1>UPDATE PLACES</h1>
+		
+		<table class="table" style="width:  500px;">
+		
+		<tr>
+			<th>PLACE</th>
+			<td><input type="text" name="place" class="form-control" value="{{data['updater'][0]['place']}}"></td>
+		</tr>
+		
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-primary"></td>
+		</tr>
+	</table>
+
+
+		{% else %}
+
+
+	
+		
+
+		<table class="table" style="width:  500px;">
+			<h1>MANAGE PLACES</h1>
+		<tr><tr>
+			<th>PLACE</th>
+			<td><input type="text" name="place" class="form-control" ></td>
+		</tr>
+			
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" value="ADD" class="btn btn-primary"></td>
+		</tr>
+
+
+		</table>
+	</form>
+</center>
+{%endif%}
+
+		
+	<center>	<h1>PLACES ADDED </h1>
+		<table class="table" style="width: 500px;" >
+			<tr>
+				<th>SL.NO</th>
+				<th>PLACE</th>
+				
+				<th>UPDATE</th>
+				<TH>DELETE</TH>
+			</tr>
+			{% for row in data['faculty'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				
+				<td>{{row['place']}}</td>
+				
+				
+
+				<td><a href="?action=update&id={{ row['place_id'] }}" class="btn btn-warning">UPDATE</a></td>
+				<td><a href="?action=delete&id={{ row['place_id'] }}" class="btn btn-danger" >DELETE</a></td>
+				
+			</tr>
+			{% endfor%}
+		</table>
+		
+		
+	
+		
+	</form>
+</center>
+{%include 'footer.html'%}

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="@drawable/background"
+    android:orientation="vertical"
+    tools:context=".Addevent">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add "
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        android:textSize="30dp"
+        android:textStyle="bold" />
+
+    <EditText
+        android:id="@+id/dob"
+        android:layout_width="350dp"
+        android:layout_height="40dp"
+
+        android:layout_marginTop="10dp"
+        android:ems="10"
+        android:focusable="false"
+        android:gravity="center"
+        android:hint="enter to date"
+        android:inputType="textPersonName"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white"
+        tools:layout_editor_absoluteX="81dp"
+        tools:layout_editor_absoluteY="527dp" />
+
+    <EditText
+        android:id="@+id/event"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="05dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Enter event"
+        android:textStyle="bold"
+        android:inputType="textEmailAddress"
+        android:textColor="#F4F0F0"
+        android:textColorHint="#FFF7F7"/>
+
+
+    <EditText
+        android:id="@+id/details"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="05dp"
+        android:ems="10"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:hint="event details"
+        android:inputType="textPersonName"
+        android:textColor="#F4F0F0"
+        android:textColorHint="#FFF7F7" />
+
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:textStyle="bold"
+        android:text="Add " />
+
+
+</LinearLayout>

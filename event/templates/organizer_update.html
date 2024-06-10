@@ -1,0 +1,75 @@
+{%include 'organizer_header.html'%}
+
+
+
+<div style="margin-bottom: 1em; margin-top: 3em; background:url('/static/img/carousel-1.jpg') ; height: 300px; width: 100%; background-size: cover;" >
+	</div>
+<br><br>
+<center>
+	{% if data['updater'] %}
+
+	<form method="post">
+		
+				<table class="table" style="width:  500px;">
+		
+		<tr>
+				<th> Name</th>
+				<td><input type="text" name="name" required="" class="form-control" value="{{data['updater'][0]['name']}}"></td>
+			</tr>
+			<!-- <tr>
+				<th>Place</th>
+				<td><input type="text" name="place" required="" class="form-control" value="{{data['updater'][0]['place']}}"></td>
+
+			</tr> -->
+			<tr>
+				<th>Phone</th>
+				<td><input type="text" name="phone" maxlength="10" required="" class="form-control" value="{{data['updater'][0]['phone']}}"></td>
+			</tr>
+			<tr>
+				<th>Email</th>
+				<td><input type="email" name="email" required="" pattern=".+gmail\.com" class="form-control" value="{{data['updater'][0]['email']}}"></td>
+			</tr>
+			
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="update" value="UPDATE" class="btn btn-primary"></td>
+		</tr>
+	</table>
+
+{%endif%}
+	<center>	<h1>My Profile</h1>
+		<table class="table" style="width: 500px;" >
+			<tr>
+				<th>SL.NO</th>
+				<th>NAME</th>
+				
+				<th>PLACE</th>
+				<th>PHONE</th>
+				<th>EMAIL</th>
+				
+				<th>UPDATE</th>
+				
+			</tr>
+			{% for row in data['faculty'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				
+				<td>{{row['name']}} </td>
+				<td>{{row['place']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				
+				
+
+				<td><a href="?action=update&id={{ row['organizer_id'] }}" class="btn btn-warning">UPDATE</a></td>
+				
+				
+			</tr>
+			{% endfor%}
+		</table>
+		
+		
+	
+		
+	</form>
+</center>
+{%include 'footer.html'%}

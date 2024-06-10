@@ -1,0 +1,98 @@
+{%include 'organizer_header.html'%}
+
+
+
+<div style="margin-bottom: 1em; margin-top: 3em; background:url('/static/img/carousel-1.jpg') ; height: 300px; width: 100%; background-size: cover;" >
+	</div>
+<center>
+	<form method="post" style="margin-top: 2rem;">
+
+		<table class="table" style="width:  500px;">
+			<h1>MANAGE EVENT</h1>
+		<tr>
+				<th>Event type</th>
+				<td>
+					<select name="event" class="form-control" required="">
+						<option>select--</option>
+						{%for row in data['event']%}
+						<option value="{{row['event_type_id']}}">{{row['event_type']}}</option>
+						{%endfor%}
+					</select>
+				</td>
+
+			</tr>
+			<tr>
+				<th>Event</th>
+				<td><input type="text" name="eve" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Venue</th>
+				<td><input type="text" name="venue" required="" class="form-control"></td>
+
+			</tr>
+			<tr>
+				<th>Amount</th>
+				<td><input type="text" name="amount" maxlength="10" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Address</th>
+				<td><input type="text" name="add" required=""class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Event date</th>
+				<td><input type="date" name="date" required="" class="form-control"></td>
+			</tr>
+			<tr>
+				<th>Details</th>
+				<td><input type="text" name="detail" required="" class="form-control"></td>
+			</tr>
+			
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" value="ADD" class="btn btn-primary"></td>
+		</tr>
+
+
+		</table>
+	</form>
+</center>
+
+
+		
+	<center>	<h1>EVENT ADDED </h1>
+		<table class="table" style="width: 500px;" >
+			<tr>
+				<th>SL.NO</th>
+				<th>NAME</th>
+				
+				<th>PLACE</th>
+				<th>PHONE</th>
+				<th>EMAIL</th>
+				
+				<th>UPDATE</th>
+				<TH>DELETE</TH>
+			</tr>
+			{% for row in data['faculty'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				
+				<td>{{row['fname']}} {{row['lname']}}</td>
+				<td>{{row['place']}}</td>
+				<td>{{row['phone']}}</td>
+				<td>{{row['email']}}</td>
+				
+				
+
+				<td><a href="?action=update&id={{ row['staff_id'] }}" class="btn btn-warning">UPDATE</a></td>
+				<td><a href="?action=delete&id={{ row['staff_id'] }}" class="btn btn-danger" >DELETE</a></td>
+				<td><a href="organizer_add_service?&id={{ row['staff_id'] }}" class="btn btn-danger" >ADD SERVICE</a></td>
+				
+			</tr>
+			{% endfor%}
+		</table>
+		
+		
+	
+		
+	</form>
+</center>
+{%include 'footer.html'%}

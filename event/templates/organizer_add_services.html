@@ -1,0 +1,62 @@
+{%include 'organizer_header.html'%}
+
+
+
+
+<div style="margin-bottom: 1em; margin-top: 3em; background:url('/static/img/carousel-1.jpg') ; height: 300px; width: 100%; background-size: cover;" >
+	</div>	
+<center>		
+
+		<table class="table" style="width:  500px;">
+			<h1>MANAGE SERVICE</h1>
+		<tr>
+			<th>SERVICE</th>
+			<td><input type="text" name="place" class="form-control" ></td>
+		</tr>
+		<tr>
+			<th>DETAILS</th>
+			<td><input type="text" name="detail" class="form-control" ></td>
+		</tr>
+			
+		<tr>
+			<td colspan="2" align="center"><input type="submit" name="submit" value="ADD" class="btn btn-primary"></td>
+		</tr>
+
+
+		</table>
+	</form>
+</center>
+
+		
+	<center>	<h1>SERVICE ADDED </h1>
+		<table class="table" style="width: 500px;" >
+			<tr>
+				<th>SL.NO</th>
+				<th>SERVICE</th>
+				<th>DETAIL</th>
+				
+				<th>UPDATE</th>
+				<TH>DELETE</TH>
+			</tr>
+			{% for row in data['faculty'] %}
+			<tr>
+				<td>{{loop.index}}</td>
+				
+				<td>{{row['service']}}</td>
+				<td>{{row['detail']}}</td>
+				
+				
+
+				
+				<td><a href="?action=delete&id={{ row['service_id'] }}" class="btn btn-danger" >DELETE</a></td>
+				
+			</tr>
+			{% endfor%}
+		</table>
+		
+		
+	
+		
+	</form>
+</center>
+{%include 'footer.html'%}
